@@ -1,0 +1,1 @@
+getent passwd $(eval echo {$(cat /etc/login.defs | grep "^UID_MIN" | cut -f 4 | cut -c 2-)..$(cat /etc/login.defs | grep "^UID_MAX" | cut -f 4)})

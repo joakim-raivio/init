@@ -1,0 +1,32 @@
+#! /bin/bash
+RED='\033[0;31m'
+NC='\033[0m'
+CAT_LINES=80
+SHODAN_LINES=56
+LINES_C=$(tput lines)
+BASEDIR=$(dirname "$0")
+SHODAN_QUOTE=" Look at you, hacker: a pathetic creature of meat and bone, panting and sweating\n as you run through my corridors. How can you challenge a perfect, immortal machine?\n"
+clear
+if [ $LINES_C -gt $CAT_LINES ]
+then
+	cat "${BASEDIR}/cat"
+	printf "\n                                  Meoow\n"
+#	echo -en "\007"
+	sleep 1.5
+elif [ $LINES_C -gt $SHODAN_LINES ]
+then
+	cat "${BASEDIR}/shodan"
+	printf "${SHODAN_QUOTE}"
+else
+	cat "${BASEDIR}/shodan_small"
+	printf "${SHODAN_QUOTE}"
+#	echo -en "\007"
+fi
+#echo -en "\007"
+NAME=$(whoami)
+printf "\nWelcome ${RED}${NAME}${NC}!\n"
+curl -s "wttr.in/Helsinki"  2>/dev/null | head -n 7
+CUR_TIME=$(date +"%a %b %d %T %z %Y")
+printf "\nCurrent time - - - - - - -: ${CUR_TIME}"
+printf "\nYou were last logged in on: $(cat ${BASEDIR}/lastlog)\n"
+echo ${CUR_TIME} > ${BASEDIR}/lastlog

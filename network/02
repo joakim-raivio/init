@@ -1,0 +1,1 @@
+ifconfig en0 | grep broadcast | cut -d ' ' -f 6 && ping -c 2 $(ifconfig en0 | grep broadcast | cut -d ' ' -f 6) | grep $(ifconfig en0 | grep broadcast | cut -d ' ' -f 6 | cut -d . -f 1-2) | tail -n +2 | sed '1d;$d' | cut -d ' ' -f 4 | sed 's/.$//' | sort

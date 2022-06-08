@@ -1,0 +1,6 @@
+For ssh, you can either start a new session with actually using something like
+'ssh USER@localhost', or use the switch user command 'su - USER', hyphen for 
+creating a "new" session.
+
+For the graphic session on VirtualBox you can use the same su command, or logout
+and then enter the new users credentials.

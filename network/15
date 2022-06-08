@@ -1,0 +1,4 @@
+sudo vim /etc/hosts
+
+#Input a new line: "46.19.122.85 intra.42.fr"
+#This will not work, since our student users aren't sudoers.

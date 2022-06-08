@@ -1,0 +1,9 @@
+#!/bin/bash
+if [ -z $1 ]
+then
+	printf "Usage: ./02 USERNAME\n"
+else
+	sudo killall -u $1
+	sudo userdel -f -r $1
+fi
+# Run this script with the user you want to delete as an argument

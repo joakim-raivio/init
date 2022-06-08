@@ -1,0 +1,4 @@
+ssh USERNAME@localhost
+## This will connect to the VM from itself. You can run this from
+## the host machine if you have properly setup the VMs networking configuration.
+## This also works for connecting to remote servers via ssh etc.
